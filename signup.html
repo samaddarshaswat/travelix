@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration page </title>
+    <link rel = "stylesheet" type = "text/css" href = "combined.css">
+    <script>
+        function validate()
+			{
+				var user = document.form1.username;
+				var phone = document.form1.phone;
+				var email = document.form1.Email;
+				var add = document.form1.address;
+				var dob = document.form1.dob;
+				var pw = document.form1.pw;
+
+			if(user.value.length<=0)
+			{
+				alert("Please enter username");
+				user.focus();
+				return false;
+			}
+            if(phone.value.length<=0)
+			{
+				alert("Please enter your Phone Number");
+				phone.focus();
+				return false;
+			}
+			
+			if(email.value.length<=0)
+			{
+				alert("Please enter your Email");
+				email.focus();
+				return false;
+			}
+			if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.form1.Email.value))
+            {
+                return (true)
+            }
+            else 
+            {
+                alert("You have entered an invalid email address!")
+                return (false)
+            }
+			if(pw.value.length<8)
+			{
+				alert("password should contain 8 characert");
+				pw.focus();
+				return false;
+			}
+			var passw= /^[A-Za-z0-9]\w{7,14}$/;
+        	if(pw.value.match(passw))
+        	{
+				alert("Please enter a password with special case.");
+    			pw.focus();
+    			return false;
+        	}
+			
+			
+			
+			if(add.value.length<=0)
+			{
+				alert("Please enter your Address!!");
+				add.focus();
+				return false;
+			}
+			if(dob.value.length<=0)
+			{
+				alert("Please enter your Birthdate!!");
+				dob.focus();
+				return false;
+			}
+            }
+    </script>
+</head>
+<body>
+
+    
+    <main>
+        <section class="booking">
+            <div class="container">
+                <div class="main-heading">
+                    <h1 class="title">Register</h1>
+                </div>
+                <form name="form1" action="signup.php" method="post" class=form onsubmit="return validate()">
+                    <div class="input-group">
+                        <label for="username" class="input-label">Username</label>
+                        <input type="text" name="username" class="input" id="username">
+                    </div>
+                    <div class="input-group">
+                        <label for="phone" class="input-label">Phone Number</label>
+                        <input type="number" name="phone"class="input" id="phone">
+                    </div>
+                    <div class="input-group">
+                        <label for="email" class="input-label">Email</label>
+                        <input type="text" size=20 name="email" class="input" id="Email">
+                    </div>
+                    <div class="input-group">
+                        <label for="address" class="input-label">Address</label>
+                        <input type="text" rows="4" cols="20" name="address" class="input" id="address">
+                    </div>
+                    <div class="input-group">
+                        <label for="dob" class="input-label">Date of Birth</label>
+                        <input type="date"  class="input" name="dob" id="dob">
+                    </div>
+                    <div class="input-group">
+                        <label for="pw" class="input-label">Password</label>
+                        <input type="password" size=20 class="input" name="pw" id="pw">
+                    </div>
+                    <div class="input-group">
+                        <label for="securityquestion" class="input-label">What was your first pet's name (security question)</label>
+                        <input type="text" rows="4" cols="20" name="security" class="input" id="security">
+                    </div>
+                    <button type="submit" class="btn form-btn btn-purple">Register
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

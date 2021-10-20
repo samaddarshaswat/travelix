@@ -1,0 +1,491 @@
+/*Import the fonts used*/
+@import url('https://fonts.googleapis.com/css?family=Courgette|Open+Sans:400,800&display=swap');
+/*Basic reset*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Custom properties*/
+:root {
+    --dark-color: #2d2c2c;
+    --purple-solid: #350a4f;
+    --purple-transparent: rgba(53, 10, 79, .7);
+    --purple-transparent-alt: rgba(53, 10, 79, .5);
+    --purple-light: #8f50fb;
+    --yellow-solid: #fa9e2c;
+    --gradient-color: linear-gradient(to right, var(--yellow-solid), var(--purple-light));
+    --gradient-color-alt: linear-gradient(to right, var(--purple-light), var(--yellow-solid));
+}
+/* Global styles */
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    color: var(--dark-color);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+section{
+    padding: 5rem 0;
+
+}
+
+/* Reusable styles */
+.travelix{
+    padding-left: 0px;
+    /* margin-left: 0%; */
+}
+.container{
+    width: 100%;
+    max-width: 120rem;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+.btn{
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem 3.5rem;
+    border: none;
+    border-radius: 10rem;
+    align-items: center;
+} 
+/* Header styles */
+.header{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--purple-transparent);
+}
+
+/* Header styles - nav */
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img{
+    max-width: 80%;  
+}
+
+.hamburger-menu{
+      
+    font-size: 2.6rem;
+    color: white;
+    cursor: pointer;
+    /*position: relative;*/
+    z-index: 1500;
+}
+
+.hamburger-menu .fa-times{
+    display: none;
+}
+
+.menu-open .hamburger-menu .fa-times{
+    display:block;
+}
+.menu-open .hamburger-menu .fa-bars{
+    display:none;
+}
+
+.nav-list{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--purple-solid);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1400;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s;
+}
+
+.menu-open .nav-list{
+    opacity: 1;
+    transform: scale(1);
+}
+.nav-item:not(:last-child){
+    margin-bottom: .5rem;
+}
+.nav-link{
+    display: block;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 1rem;
+}
+
+.extra{
+    color: white;
+    font-weight: bold;
+    
+}
+.hero{
+    width: 100%;
+    height: 100vh;
+    background: url("images/hero_background.jpg") center no-repeat; 
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+    text-align: center;
+    position: relative;
+    z-index: -1;
+}
+
+.hero::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background-color: var(--purple-transparent-alt);
+    z-index: -1;
+
+}
+
+.main-heading{
+    color: white;
+    line-height: 1;
+    text-shadow: 1px 1px 1 rem rgba(0, 0,0,0.5);
+    margin: 2.5rem;
+}
+
+.title{
+    font-size: 4.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+}
+.subtitle{
+    font-size: 3.6rem;
+    font-weight: 300;
+    font-family: 'courgette',cursive;
+}
+
+
+
+.btn-gradient{
+    background-image: var(--gradient-color);
+}
+
+.btn-gradient:hover{
+    background-image: var(--gradient-color-alt);
+}
+
+.dots{
+    font-size: 2.4rem;
+    margin-left: .5rem;
+    opacity: 0.75rem;
+}
+
+.booking{
+    background-image: var(--gradient-color);
+
+}
+
+.input-group{
+    margin-bottom: 1.5rem;
+}
+
+.input-label{
+    display: block;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color:white;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.input, .options{
+    outline:none;
+    border: none;
+    width: 100%;
+    min-height: 4rem;
+    padding: 1rem;
+    font-weight: bold;
+    color: #a5a5a5;
+    letter-spacing: 2px;
+    font-family: "Open Sans", sans-serif;
+    resize: none;
+
+}
+
+.form-btn{
+    margin-top: 2.5rem;
+    cursor: pointer;
+
+}
+
+.btn-purple{
+    background-color: var(--purple-solid);
+}
+
+.btn-purple:hover{
+    background-color: #56247f;
+}
+
+/* Featured hotels section styles */
+.section-head{
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.heading{
+    display: block;
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+
+.sub-heading{
+    font-size: 1.7rem;
+    font-family: 'Courgette', cursive;
+    font-weight: 300;
+    color: #a5a5a5;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-gap:2.5rem;
+}
+.grid-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.featured-hotels{
+    height: 35rem;
+    color: #fff;
+    padding: 1rem;
+    position: relative;
+    z-index: -1;
+}
+
+.featured-hotels::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background-color: var(--purple-transparent-alt);
+    z-index: -1;
+}
+
+.hotel-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -2;
+}
+
+.hotel-name{
+    font-size: 2.6rem;
+}
+
+.hotel-price{
+    font-size: 1.8rem;
+}
+
+.hotel-rating{
+    margin:1rem 0 2.5rem;
+}
+.rating{
+    color: var(--yellow-solid);
+}
+/* 
+Special Offer section style */
+
+.offer{
+    background: linear-gradient(to right, rgba(258,158,44,0.8), rgba(143, 80,251,0.8)), 
+    url("images/hotel_the_paradise.jpg") bottom center no-repeat;
+
+    background-size: cover;
+}
+
+.offer-content{
+    background-color: #fff;
+    text-align: center;
+    padding: 5rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.discount{
+    background-color: var(--yellow-solid);
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: 2px solid var(--yellow-solid);
+    outline-offset: 0.5rem;
+}
+
+.paragraph{
+    color: #a5a5a5;
+    margin-bottom: 2.5rem;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+footer{
+width: 100%;
+position: relative;
+bottom: 0;
+left: 0;
+background: var(--purple-solid);
+}
+footer .content{
+max-width: 1350px;
+margin: auto;
+padding: 20px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+footer .content p,a{
+color: #fff;
+}
+footer .content .box{
+width: 33%;
+transition: all 0.4s ease;
+}
+footer .content .topic{
+font-size: 22px;
+font-weight: 600;
+color: #fff;
+margin-bottom: 16px;
+
+}
+footer .content p{
+text-align: justify;
+}
+footer .content .lower .topic{
+margin: 24px 0 5px 0;
+}
+footer .content .lower i{
+padding-right: 16px;
+}
+footer .content .middle{
+padding-left: 80px;
+}
+footer .content .middle a{
+line-height: 32px;
+}
+footer .content .right input[type="text"]{
+height: 45px;
+width: 100%;
+outline: none;
+color: #d9d9d9;
+background: #000;
+border-radius: 5px;
+padding-left: 10px;
+font-size: 17px;
+border: 2px solid #222222;
+}
+footer .content .right input[type="submit"]{
+height: 42px;
+width: 100%;
+font-size: 18px;
+color: #d9d9d9;
+background: #eb2f06;
+outline: none;
+border-radius: 5px;
+letter-spacing: 1px;
+cursor: pointer;
+margin-top: 12px;
+border: 2px solid #eb2f06;
+transition: all 0.3s ease-in-out;
+}
+.content .right input[type="submit"]:hover{
+background: none;
+color: #eb2f06;
+}
+footer .content .media-icons a{
+font-size: 16px;
+height: 45px;
+width: 45px;
+display: inline-block;
+text-align: center;
+line-height: 43px;
+border-radius: 5px;
+border: 2px solid #222222;
+margin: 30px 5px 0 0;
+transition: all 0.3s ease;
+}
+.content .media-icons a:hover{
+border-color: #eb2f06;
+}
+footer .bottom{
+width: 100%;
+text-align: right;
+color: #d9d9d9;
+padding: 0 40px 5px 0;
+}
+footer .bottom a{
+color: #eb2f06;
+}
+footer a{
+transition: all 0.3s ease;
+}
+footer a:hover{
+color: #eb2f06;
+}
+@media (max-width:1100px) {
+footer .content .middle{
+padding-left: 50px;
+}
+}
+@media (max-width:950px){
+footer .content .box{
+width: 50%;
+}
+.content .right{
+margin-top: 40px;
+}
+}
+@media (max-width:560px){
+footer{
+position: relative;
+}
+footer .content .box{
+width: 100%;
+margin-top: 30px;
+}
+footer .content .middle{
+padding-left: 0;
+}
+}

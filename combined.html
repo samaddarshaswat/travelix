@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travelix</title>
+    <!--Font awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="combined.css">
+    <script>
+        function validation()
+        {
+            var ci=document.getElementById('checkin');
+            var co=document.getElementById('checkout');
+            var d=new Date();
+            var date=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+            var child=document.getElementById('children');
+            var adult=document.getElementById('adults');
+            if(ci.value=="")
+            {
+                alert('Please enter check in date!!');
+                return false;
+                document.write(d);
+            }
+            if(ci.value<date)
+            {
+                alert('please enter the correct date')
+                return false;
+            }
+            if(co.value=="")
+            {
+                alert('Please enter check out date!!');
+                return false;
+            }
+            if(co.value<=ci.value)
+            {
+                alert('Please enter check out date atleast one day after the check-in date!!');
+                return false;
+            }
+            if(child.value<0)
+            {
+                alert('Please enter the number of children less than 0!!');
+                return false;
+            }
+            if(adult.value<=0)
+            {
+                alert('Please enter the number of adults less than 0!!');
+                return false;
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <!-- <a href="index.html" class="logo">
+                    <img src="logo.jpeg" alt="">
+                </a> -->
+                <div class="extra">
+                    <a href="#"><img class="travelix" src="images/logo.png" alt=""></a>
+                </div>
+                <div class="extra">
+                    <a href="#footer">About</a>
+                </div>
+                <div class="extra">
+                    <a href="#2">Our rooms</a>
+                </div>
+                <div class="extra">
+                    <a href="#4">Book now</a>
+                </div>
+                <div class="extra">
+                    <a href="#3">Offers</a>
+                </div>
+                <div class="extra">
+                    <a href="login.php">Login</a>
+                </div>
+                <!-- <div class="hamburger-menu">
+
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-times"></i>
+                </div> -->
+                <!-- <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="p1.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact</a>
+                    </li>
+                </ul> -->
+            </nav>
+        </div>
+    </header>
+    <main id="booking">
+        <div class="hero">
+            <div class="container">
+                <div class="main-heading">
+                    <h1 class="title">Discover</h1>
+                    <h2 class="subtitle">Our luxury hotel </h2>
+                </div>
+            
+            </div>
+        </div>
+
+        
+        <section id= "2" class="hotels">
+            <div class="container">
+                <h5 class="section-head">
+                    <span class="heading">Explore</span>
+                    <span class="sub-heading">Our beautiful rooms</span>
+                </h5>
+                <div class="grid">
+                    <div class="grid-item featured-hotels">
+                        <img src="images/img3.jpg" alt="image loading..." class="hotel-image">
+                        <h5 class="hotel-name">Classic</h5>
+                        <span class="hotel-price">₹2999/Night </span>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star-half rating"></i>
+                        </div>
+                        <a href="#4" class="btn btn-gradient">Book now
+                                <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                        </a>
+                    </div>
+
+                    <div class="grid-item featured-hotels">
+                        <img src="images/img1.jpg" alt="image loading..." class="hotel-image">
+                        <h5 class="hotel-name">Deluxe</h5>
+                        <span class="hotel-price">₹3999/Night </span>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                        </div>
+                        <a href="#4" class="btn btn-gradient">Book now
+                                <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                        </a>
+                    </div>
+
+                    <div class="grid-item featured-hotels">
+                        <img src="images/img2.jpg" alt="image loading..." class="hotel-image">
+                        <h5 class="hotel-name">Suite</h5>
+                        <span class="hotel-price">₹6999/Night </span>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                        </div>
+                        <a href="#4" class="btn btn-gradient">Book now
+                                <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="3" class="offer">
+            <div class="container">
+                <div class="offer-content">
+                    <div class="discount">
+                        40% off
+                    </div>
+                    <h5 class="hotel-name">Suite</h5>
+                    <div class="hotel-rating">
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                    </div>
+                    <p class="paragraphs">
+                       Our suite is the highest quality room tha we offer with all the luxuaries and ammenities that one could expect. Grab the opportunity!! 
+                    </p>
+                    <a href="#4" class="btn btn-gradient">Grab now
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                </a>
+                </div>
+            </div>
+        </section>
+        <section id="4" class="booking">
+            <div class="container">
+                <form action="table.php" method="post" class="form" onsubmit="return validation()">
+                    <div class="input-group">
+                        <label for="check-in" class="input-label">Check-in</label>
+                        <input name="Check-in" type="date" class="input" id="checkin">
+                    </div>
+                    <div class="input-group">
+                        <label for="check-out" class="input-label">Check-out</label>
+                        <input name="Check-out" type="date" class="input" id="checkout">
+                    </div>
+                    <div class="input-group">
+                        <label for="adults" class="input-label">Adults</label>
+                        <select name="adults" id="adults" class="options">
+                            <option value=0>0</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="children" class="input-label">Children</label>
+                        <select name="children" id="children" class="options">
+                            <option value=0>0</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                        </select>
+                    </div>
+                    
+                    <input type="submit"  value="Search" class="btn form-btn btn-purple">
+                   
+                </form>
+            </div>
+        </section>
+    </main> 
+    <footer id="footer">
+        <div class="content">
+        <div class="left box">
+        <div class="upper">
+        <div class="topic">About us</div>
+        <p>The property is conveniently located in Andheri East, just a short drive from Mumbai's international and domestic airport terminals and close to the area's business hubs.</p>
+        </div>
+        <div class="lower">
+        <div class="topic">Contact us</div>
+        <div class="phone">
+        <a href="#"><i class="fas fa-phone-volume"></i>+91 9424166689</a>
+        </div>
+        <div class="email">
+        <a href="#"><i class="fas fa-envelope"></i>travelixgroupofhotels@gmail.com</a>
+        </div>
+        </div>
+        </div>
+        <div class="middle box">
+        <div class="topic">Room Facilities</div>
+        <div><a href="#">Complimentary high speed internet</a></div>
+        <div><a href="#">Ensuite marble bathroom with shower, hairdryer, and complimentary accesories</a></div>
+        <div><a href="#">In house restaurant</a></div>
+        <div><a href="#">Bathtub (only in Suite)</a></div>
+        <div><a href="#">Balcony (only with Deluxe and Suite)</a></div>
+        <div><a href="#">City view rooms</a></div>
+        </div>
+        <div class="right box">
+        <div class="topic">Subscribe us</div>
+        <!-- <form action="#"> -->
+        <input type="text" placeholder="Enter email address">
+        <input type="submit" name="" value="Send">
+        <div class="media-icons">
+        <a href=""><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        </form>
+        </div>
+        </div>
+        
+        </footer>
+</body>
+</html>
