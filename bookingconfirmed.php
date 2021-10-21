@@ -50,8 +50,8 @@
                 VALUES (NULL, '$uname', '$checkindate', '$checkoutdate', '$adults', '$children', 
                 '$classic', '$deluxe', '$suite');");
                
-                $Uname = "sjkdfhsjkdfhsk";
-                echo `<script>alert(`  + $Uname + `)</script>`;
+                // $Uname = "sjkdfhsjkdfhsk";
+                // echo `<script>alert(`  + $Uname + `)</script>`;
 
                 echo "<img src='images/bookingconfirmed.PNG'>";
 
