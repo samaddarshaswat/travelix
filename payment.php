@@ -1,7 +1,7 @@
 <?php
     $cookie_name="paymenttime";
     $cookie_value=1;
-    setcookie($cookie_name, $cookie_value, time()+10, "/");
+    setcookie($cookie_name, $cookie_value, time()+240, "/");
 ?>
 
 <!DOCTYPE html>
